@@ -1,0 +1,28 @@
+.env
+__pycache__/
+*.pyc
+.DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.xdv
+
+# Legacy output dir (kept for Python pipeline compatibility)
+outputs/
+
+# PDFs tracked selectively — uncomment to ignore all
+# *.pdf
+
+# Personal data — real resume content stays local only, never pushed.
+# Public-facing demo content with fictional data lives under examples/.
+/templates/photo.jpg
+/templates/resume_cn.tex
+/templates/resume_en.tex
+/jobs/
+/knowledge_base/working experience/
+/knowledge_base/academic experience and projects/

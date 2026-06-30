@@ -1,0 +1,214 @@
+%% [DEMO] English Base Template — fictional person, for project structure demonstration only
+%% Real usage: put your own version at repo root templates/resume_en.tex (excluded by .gitignore, never committed)
+%% Compile with: xelatex resume_en.tex
+
+\documentclass{article}
+
+\usepackage{fontspec}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+
+%----------- Font Settings -----------
+\setmainfont{Times New Roman}
+
+%----------- Page Settings -----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.10in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.25in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setstretch{1.03}
+\graphicspath{{./}{../../templates/}}
+
+%----------- Section Formatting -----------
+\titleformat{\section}{
+  \vspace{-6pt}\bfseries\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+%----------- Custom Commands -----------
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeSubheading}[3]{
+  \vspace{-1pt}\item
+  \noindent
+  \makebox[\textwidth][s]{%
+    \makebox[0.34\textwidth][l]{\textbf{#1}}%
+    \makebox[0.32\textwidth][c]{\textbf{#2}}%
+    \makebox[0.34\textwidth][r]{\textbf{#3}}%
+  }
+  \vspace{-16pt}
+}
+
+\newcommand{\resumeProjectHeading}[3]{
+  \vspace{-1pt}\item
+  \noindent
+  \makebox[\textwidth][s]{%
+    \makebox[0.34\textwidth][l]{\textbf{#1}}%
+    \makebox[0.32\textwidth][c]{\textbf{#2}}%
+    \makebox[0.34\textwidth][r]{\textbf{#3}}%
+  }
+  \vspace{-16pt}
+}
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0in, label={}, itemsep=2pt, topsep=2pt]
+}
+
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}
+}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[
+    leftmargin=1.1em,
+    itemsep=0pt,
+    topsep=0pt,
+    parsep=0pt,
+    partopsep=0pt,
+    label=\raisebox{0.25ex}{\tiny$\bullet$}
+  ]
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-4pt}
+}
+
+%----------- Document -----------
+\begin{document}
+
+%% No real photo in this demo. For real use, uncomment below and place photo.jpg in templates/ (excluded by .gitignore).
+% \AddToShipoutPictureFG*{%
+%   \put(515,710){%
+%     \includegraphics[width=2.1cm]{photo.jpg}%
+%   }%
+% }
+%----------- Personal Info -----------
+\begin{center}
+    {\Huge \bfseries Sam Zhang} \\ \vspace{4pt}
+    Phone: +86 138-0000-0000 \quad
+    Email: \href{mailto:zhangsan.demo@example.com}{zhangsan.demo@example.com} \quad
+    GitHub: \href{https://github.com/zhangsan-demo}{github.com/zhangsan-demo}
+\end{center}
+
+%----------- Education -----------
+\section{Education}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Generic University}
+    {MSc Financial Technology}
+    {Sep 2025 -- Sep 2026}
+    \resumeItemListStart
+      \resumeItem{Coursework: Credit Risk, Derivatives Pricing, Algorithmic Trading, Econometrics and Big Data}
+      \resumeItem{Departmental Entrance Scholarship}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Sample Institute of Technology}
+    {BSc Information Management \& Information Systems | GPA: 87.0/100}
+    {Sep 2021 -- Jun 2025}
+    \resumeItemListStart
+      \resumeItem{Coursework: Machine Learning, Python, Data Structures, Database, Operations Research, Corporate Finance}
+      \resumeItem{University Scholarship, Outstanding Student Leader}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------- Professional Experience -----------
+\section{Professional Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Sample Securities Co.}
+    {Industry Research Intern}
+    {Jul 2025 -- Feb 2026}
+    \resumeItemListStart
+      \resumeItem{\textbf{Market Research \& Data Analytics:} Tracked new-energy sector trends; built capacity, inventory, and pricing databases using Wind data to produce weekly research reports.}
+      \resumeItem{\textbf{Company Research:} Co-authored in-depth equity research reports and independently produced several earnings review notes.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Sample Consulting Firm}
+    {FinTech Consulting Intern}
+    {Jul 2024 -- Jan 2025}
+    \resumeItemListStart
+      \resumeItem{\textbf{Product Design:} Drove requirement analysis, feature design, and QA validation for an enterprise intelligent customer-service platform; independently designed the ticket-routing module.}
+      \resumeItem{\textbf{AI Agent Development:} Built a knowledge-base Q\&A agent using RAG to improve customer-service response efficiency.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Sample Audit Bureau}
+    {Audit Intern}
+    {Apr 2024 -- Jun 2024}
+    \resumeItemListStart
+      \resumeItem{\textbf{IT Systems Audit:} Performed walkthrough testing on project procurement and system implementation processes for an enterprise informatization audit, assisting with audit evidence documentation.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------- Projects -----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\href{https://github.com/zhangsan-demo/demo-recsys}{E-commerce Recommendation Engine}}
+    {Open Source}
+    {May 2026}
+    \resumeItemListStart
+      \resumeItem{Built a collaborative-filtering recommendation engine (Python + FastAPI) with real-time ranking based on user behavior modeling.}
+      \resumeItem{Designed an A/B testing framework to evaluate recommendation quality using click-through and conversion metrics.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {RAG-Powered Customer Service Assistant}
+    {Capstone Project}
+    {Dec 2024 -- May 2025}
+    \resumeItemListStart
+      \resumeItem{Built a knowledge-base Q\&A system using LangChain and RAG, covering intent recognition, retrieval, and answer generation.}
+      \resumeItem{Built full-stack application (Vue + FastAPI + MongoDB) supporting multi-turn dialogue and automated ticket classification.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------- Awards -----------
+\section{Awards \& Activities}
+\begin{itemize}[leftmargin=0in, label={}, itemsep=1pt, topsep=2pt]
+\small{\item{
+Sample Mathematical Modeling Competition: Provincial 3rd Prize (2023) \\
+President, Mathematical Modeling Club (2022 -- 2023)
+}}
+\end{itemize}
+
+%----------- Skills -----------
+\section{Skills}
+\begin{itemize}[leftmargin=0in, label={}, itemsep=1pt, topsep=2pt]
+\small{\item{
+\textbf{Product \& AI:} Product Design, Requirement Analysis, RAG, LangChain \\
+\textbf{Technical:} Python, SQL, Vue, FastAPI, MongoDB \\
+\textbf{Financial Research:} Equity Research, Valuation, Wind, Excel \\
+\textbf{Language:} TOEFL 100+
+}}
+\end{itemize}
+
+\end{document}
