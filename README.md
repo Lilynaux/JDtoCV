@@ -62,6 +62,8 @@ data/jd/your_job.txt
 
 `config.py` 集中管理所有路径常量和 API Key 读取（从 `.env` 加载）。
 
+所有调用 LLM 用到的 prompt 都外置在 `prompts/` 目录下（按 `<场景>.system.md` / `<场景>.user.md` 命名），通过 `src/utils.py` 的 `load_prompt()` 读取，不写死在代码里，方便非工程同学直接改 prompt、做版本管理。其中简历生成的 prompt（`prompts/optimize.*.md`）遵循 `docs/PRD_003.md` 定义的简历编写规范（先定位 Positioning，再组织 Career Narrative，每段经历按 Background → Responsibility → Contribution → Result 展开，每条 Bullet 只证明一个能力）。
+
 ### 2. 按岗位归档的手工 LaTeX 工作流（`templates/` + `jobs/` + `Makefile`）
 
 自动生成的草稿通常还需要手工精修排版，因此项目额外提供了一套基于 `Makefile` 的归档工作流：
@@ -187,12 +189,14 @@ make compile JOB=target_job LANG=cn
 ├── config.py / config.yaml    # 路径常量、API Key、LLM 配置
 ├── src/                       # 流水线核心模块（见上方架构图）
 │   └── providers/             # LLM Provider 抽象（Gemini / OpenAI）
+├── prompts/                   # 外置的 LLM prompt 模板（<场景>.system.md / .user.md）
 ├── data/jd/                   # 待处理的 JD 原始文件
 ├── knowledge_base/            # 个人经历知识库（.md），递归加载
 ├── templates/                 # 简历基础模板 + 共享证件照
 ├── jobs/<name>/                # 按岗位归档：jd.txt + 定制简历 + 编译产物
 ├── outputs/                    # 自动化流水线产物（JD 分析 / 匹配报告 / 简历草稿 / PDF）
 ├── examples/                   # 虚构示范数据，结构与上面完全一致，供参考
+├── docs/                       # PRD / 简历编写规范文档
 ├── Makefile                    # 岗位归档 + 编译命令
 └── requirements.txt
 ```
