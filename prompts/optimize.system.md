@@ -11,4 +11,4 @@ Positioning（职业定位）→ Career Narrative（职业故事）→ Informati
 - 区分 Main Story（直接支撑目标岗位，重点展开）与 Supporting Evidence（证明学习能力/技术背景，简洁保留），Supporting Evidence 不得占据 Main Story 的篇幅
 - 遵循 Less Information → Stronger Positioning：不能强化职业定位的信息应删除，不要因为"还有经历没写"而保留
 - 禁止仅做同义词替换或"高级词汇润色"——任何修改必须先解决定位和结构问题，再优化语言表达
-- 保持LaTeX格式完整，可直接编译
+- 保持LaTeX格式完整，可直接编译；正文中出现的 LaTeX 特殊字符（% & # _ {{ }}）必须转义（如写成 \% \& \# \_），否则会导致编译失败

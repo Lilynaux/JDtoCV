@@ -3,7 +3,7 @@ llm:
   provider: google
   model: gemini-2.5-flash
   temperature: 0.3
-  max_tokens: 8192
+  max_tokens: 16384
 
 # OpenAI LLM configuration
 # llm:

@@ -26,3 +26,9 @@ outputs/
 /jobs/
 /knowledge_base/working experience/
 /knowledge_base/academic experience and projects/
+/data/master_resume_cn.tex
+/data/master_resume_en.tex
+/data/jd/*.txt
+/data/jd/*.pdf
+/data/jd/*.docx
+!/data/jd/sample_jd.txt
